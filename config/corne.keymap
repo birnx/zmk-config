@@ -6,7 +6,10 @@
 #define X_RH  &smart_shft  // thumb row, right
 #define X_LT  &kp ESC
 #define X_LM  &kp TAB
-#define X_LB  &smart_shft
+#define X_LB  &none
+#define X_RM  &none
+#define X_RB  &none
+#define X_RT  &none
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
