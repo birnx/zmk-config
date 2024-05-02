@@ -24,7 +24,7 @@
 #include "mouse.dtsi"
 #include "extra_keys.h"
 
-#define ___ &none
+#define XXX &none
 #define ___ &trans
 
 /* Global settings */
