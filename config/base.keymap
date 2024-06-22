@@ -8,7 +8,10 @@
 #endif
 
 #include "zmk-helpers/helper.h"
-// #include "zmk-helpers/key-labels/42.h"
+#include "zmk-helpers/key-labels/42.h"
+
+// #include "zmk-helpers/unicode-chars/greek.dtsi"
+// #include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define DEF 0
 #define NAV 1
@@ -62,7 +65,7 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
-// MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
+MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
 MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
 MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
@@ -196,11 +199,11 @@ ZMK_MACRO(win_sleep,
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
-#define DSK_PREV    &hmr LCTRL LG(LC(LEFT))   // previous desktop
-#define DSK_NEXT    &hmr LALT LG(LC(RIGHT)) // next     desktop
-#define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
-#define PIN_APP     &kp LG(LC(LS(A)))        // pin application across desktops
-#define DSK_MGR     &kp LA(GRAVE)            // desktop manager
+// #define DSK_PREV    &hmr LCTRL LG(LC(LEFT))   // previous desktop
+// #define DSK_NEXT    &hmr LALT LG(LC(RIGHT)) // next     desktop
+// #define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
+// #define PIN_APP     &kp LG(LC(LS(A)))        // pin application across desktops
+// #define DSK_MGR     &kp LA(GRAVE)            // desktop manager
 #define VOL_DOWN    &hmr RSHFT C_VOL_DN
 
 /* Keymap */
@@ -209,13 +212,13 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-   &kp ESC     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y         &kp U         &kp I         &kp O         &kp P           ___
+    ___     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y         &kp U         &kp I         &kp O         &kp P           ___
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     ___     &hml LCTRL A  &hml LALT S   &hml LGUI D  &hml LSHFT F   &kp G           &kp H         &hmr RSHFT J  &hmr LGUI K  &hmr LALT L &hmr LCTRL FSLH    ___
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    ___     &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &comma_morph  &dot_morph    &qexcl          &smart_shft
+    ___     &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &comma_morph  &dot_morph    &qexcl          ___
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-                                        &kp TAB       &bs_del       SMART_NUM       &lt_spc NAV 0  &lt FN RT     ___                                 
+                                        &kp TAB       &bs_del       SMART_NUM       &lt FN RET    &lt_spc NAV 0     &smart_shft                             
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 )
 
